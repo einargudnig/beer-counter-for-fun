@@ -33,7 +33,7 @@ function getReq(snap) {
 
     total = countEinar;
   });
-  return console.log(total, "WINE COUNT SUM in INDEX");
+  // return console.log(total, "WINE COUNT SUM in INDEX");
 }
 
 export default function IndexPage() {
