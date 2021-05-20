@@ -32,6 +32,7 @@ function getReq(snap) {
     var countKristjan = keyReq.val().Kristjan;
 
     total = countEinar;
+    // not sure I will manage to do more here....
   });
   // return console.log(total, "WINE COUNT SUM in INDEX");
 }
