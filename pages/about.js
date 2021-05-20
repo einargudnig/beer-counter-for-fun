@@ -1,35 +1,72 @@
-import Image from "next/image";
+import firebase from "firebase/app";
+import "firebase/database";
+import { useUser } from "firebase/useUser";
+import { useEffect, useState } from "react";
+
+import Fifa from "../components/Fifa";
 
 export default function AboutPage() {
+  const [visible, setVisible] = useState("");
+
+  var names = [
+    "Einar 🐷",
+    "Ingvi 🐼",
+    "Tommi 🐮",
+    "Kristian 🦒",
+    "Dabbi 🐏",
+    "Kristján 🐗",
+    "Óli 🐸",
+  ];
+
+  var rndmPerson = names[Math.floor(Math.random() * names.length)];
+
+  const loadMore = () => {
+    setVisible(rndmPerson);
+  };
+
+  const reset = () => {
+    setVisible("");
+  };
+
+  // const renderNames = (names) => {
+  //   return (
+  //     <div>
+  //       <span>{names}</span>
+  //     </div>
+  //   );
+  // };
+
   return (
     <div className="grid md:grid-cols-2 gap-6 grid-cols-1">
       <div>
-        <section className="mb-6">
-          <h2 className="mb-3 text-xl font-bold">What is Tailwind?</h2>
-
-          <p>
-            Tailwind CSS is a highly customizable, low-level CSS framework that
-            gives you all of the building blocks you need to build bespoke
-            designs without any annoying opinionated styles you have to fight to
-            override.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="mb-3 text-xl font-bold">What is Next.js?</h2>
-          <p>
-            Next.js is a minimalistic framework for creating server-rendered
-            React applications.
-          </p>
-        </section>
+        <div className="my-2">
+          <h4 className="text-lg font-medium">Random person</h4>
+        </div>
+        <div>
+          <div className="border rounded-md border-gray-700 w-40 px-1 py-1 h-8">
+            {visible}
+          </div>
+          <div className="flex mt-2">
+            <div className="px-1">
+              <a
+                className="bg-indigo-400 px-1 py-1 rounded-md border-indigo-700 mt-3"
+                onClick={loadMore}
+              >
+                Give me people
+              </a>
+            </div>
+            <div className="px-1">
+              <a
+                className="bg-indigo-400 px-1 py-1 rounded-md border-indigo-700 mt-3"
+                onClick={reset}
+              >
+                Reset
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <Image
-        alt="A one-eyed alien holding a broken cable connected between a server and a desktop computer"
-        src="/critter.svg"
-        width={476}
-        height={297.17}
-      />
+      <Fifa />
     </div>
   );
 }
