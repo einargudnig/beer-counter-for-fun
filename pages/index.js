@@ -47,7 +47,7 @@ export default function IndexPage() {
       {/* David */}
       <div className="flex flex-row justify-around">
         <div className="px-2">
-          <h2 className="text-2xl font-bold ">Davíð</h2>
+          <h2 className="text-2xl font-bold ">Tommi</h2>
         </div>
         <div className="px-2">
           <WineCounter id="David" />
