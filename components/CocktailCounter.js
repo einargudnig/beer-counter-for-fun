@@ -3,6 +3,9 @@ import firebase from "firebase/app";
 import "firebase/database";
 import { PlusIcon } from "@heroicons/react/outline";
 import { MinusIcon } from "@heroicons/react/outline";
+import initFirebase from "../firebase/initFirebase";
+
+initFirebase(); // initialize firebase
 
 const CocktailCounter = ({ id }) => {
   const [count, setCount] = useState("");

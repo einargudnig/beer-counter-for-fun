@@ -1,6 +1,9 @@
 import "../css/index.css";
 import Head from "next/head";
 import Layout from "@components/layout";
+import initFirebase from "../firebase/initFirebase";
+
+initFirebase(); // initialize firebase
 
 function MyApp({ Component, pageProps }) {
   return (

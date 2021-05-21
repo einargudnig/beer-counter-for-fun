@@ -1,4 +1,3 @@
-import initFirebase from "../firebase/initFirebase";
 import firebase from "firebase/app";
 import "firebase/database";
 import Head from "next/head";
@@ -6,8 +5,6 @@ import BeerCounter from "../components/BeerCounter";
 import WineCounter from "../components/WineCounter";
 import CocktailCounter from "../components/CocktailCounter";
 import { get } from "js-cookie";
-
-initFirebase(); // initialize firebase
 
 const dbRefObject = firebase.database().ref().child("data");
 const dbRefBeer = dbRefObject.child("beer");
